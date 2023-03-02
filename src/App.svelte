@@ -68,10 +68,17 @@ be edited in the set */
 	}
 	.Cards {
 		margin: auto;
+		margin-bottom: 5%;
 		width: 50%;
 		border: 3px solid green;
+		align-items: center;
+		justify-content: center;
+		flex-direction: column;
+		width: 60%;
+		height: 30vh;
+
+		font-size: 2em;
 	}
 	.AdderContainer {
-		border-style: solid;
 	}
 </style>

@@ -1,6 +1,9 @@
 <script lang="ts">
+	/*Might add animation to flipping the card*/
+	import { fade } from "svelte/transition";
 	export let front: string;
 	export let back: string;
+	let visible = true;
 	let count: number = 0;
 	let current: string = front;
 	let isFront: boolean = true;
@@ -16,3 +19,6 @@
 <button class="Card" on:click={ChangeCard}>
 	*Current side of card is {SideofCard}* {current}
 </button>
+
+<style>
+</style>
