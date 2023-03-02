@@ -26,16 +26,52 @@ be edited in the set */
 </script>
 
 <main>
-	<div>
-		<input bind:value={front} placeholder="Front" class="FrontOfCard" />
-		<input bind:value={back} placeholder="Back" class="BackOfCard" />
+	<div class="AdderContainer">
+		<input bind:value={front} placeholder="Front" class="InputFrontOfCard" />
+		<input bind:value={back} placeholder="Back" class="InputBackOfCard" />
 		<button on:click={AddCard}>Add me :) </button>
 
 		{#each cards as card}
-			<Card front={card.front} back={card.back} />
+			<div class="Cards"><Card front={card.front} back={card.back} /></div>
 		{/each}
 	</div>
 </main>
 
 <style>
+	:root {
+		font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+		line-height: 1.5;
+		font-weight: 400;
+
+		color-scheme: light dark;
+		color: rgba(255, 255, 255, 0.87);
+		background-color: #242424;
+
+		font-synthesis: none;
+		text-rendering: optimizeLegibility;
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+		-webkit-text-size-adjust: 100%;
+	}
+	.InputFrontOfCard {
+		border-style: hidden;
+		display: flex;
+		flex-direction: column;
+	}
+	.InputBackOfCard {
+		border-style: hidden;
+		display: flex;
+		flex-direction: column;
+	}
+	.Cards {
+		display: flex;
+	}
+	.Cards {
+		margin: auto;
+		width: 50%;
+		border: 3px solid green;
+	}
+	.AdderContainer {
+		border-style: solid;
+	}
 </style>
