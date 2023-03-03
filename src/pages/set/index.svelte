@@ -20,8 +20,12 @@
 			back = "";
 		}
 	};
-	/*To add 1. Home page with button to makea set 2. Sets hold cards 3. Cards can
-be edited in the set */
+	/*To add 
+	1. Home page with button to makea set 
+	2. Sets hold cards 
+	3. Cards can be edited in the set 
+	4. Pico CSS 
+	5. Add fail safe pages*/
 </script>
 
 <main>
