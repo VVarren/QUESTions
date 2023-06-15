@@ -9,18 +9,22 @@
 	<title>Quiz Stuff Main Page</title>
 	
 </svelte:head>
-
+<h1>QUESTions</h1>
 <div class = cardList>
-		<h1>QUESTions</h1>
+		<Card/>
+		<Card/>
+		<Card/>
 		<Card/>
 	</div>
 
 <style>
 	.cardList {
 		display: flex;
-		flex-direction: column;
+		flex-direction: row;
+		flex-flow: wrap;
 		justify-content: center;
 		align-items: center;
+
 	}
 
 	h1 {

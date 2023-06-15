@@ -1,10 +1,19 @@
 <script lang="ts">
-	
+	let title: string = 'Card Title';
+	let backcontent:string = 'Card Contents Card Contents Card Contents Card Contents11111';
+	let clicked:boolean = false;
+	let temp:string = title;
+	function swapCardSide(){
+		clicked = !clicked;
+		clicked ? temp = backcontent: temp = title;
+	}
+	//use binding
 </script>
 
 <div class = cardContainer>
-		<div class = cardTitle>Card Title</div>
-		<div class = cardContent>Card Contents Card Contents Card Contents Card Contents Card Contents Card Contents </div>
+	<button on:click={()=> swapCardSide()} >
+		<div class = cardTitle>{temp}</div>
+	</button>
 </div>
 <style>
 .cardContainer{
@@ -12,14 +21,15 @@
 		display: flex;
 		flex-direction: column;
 		width:50%;
-		height:30%;
+		height:100%;
+		margin:3%;
 	}
 	.cardTitle{
 		background-color:blue;
+		justify-content: center;
+		text-align: center;
+
 		
 	}
-	.cardContent{
-		background-color:green;
-		
-	}
+
 </style>
