@@ -1,12 +1,18 @@
 <script lang="ts">
 	let title: string ="";
 	let backContent: string = "";
+	function createCard(){
+		//somehow link the value to a new card 
+		title = "";
+		backContent = "";
+	}
 </script>
 
 <h1>Create A Card</h1>
 <div class = "inputContainer">
 <textarea bind:value={title} class = "titleContainer" placeholder="Enter a title:"/>
 <textarea bind:value={backContent} class = "backContentContainer" placeholder="Enter the back content:"/>
+<button></button>
 </div>
 
 

@@ -3,15 +3,12 @@
 	let backcontent:string = 'Card Contents Card Contents Card Contents Card Contents11111';
 	let clicked:boolean = false;
 	let temp:string = title;
-	function swapCardSide(){
-		clicked = !clicked;
-		clicked ? temp = backcontent: temp = title;
-	}
-	//use binding
+	$: clicked ? temp = backcontent: temp = title;
+
 </script>
 
 <div class = cardContainer>
-	<button on:click={()=> swapCardSide()} >
+	<button on:click={()=> clicked = !clicked} >
 		<div class = cardTitle>{temp}</div>
 	</button>
 </div>
