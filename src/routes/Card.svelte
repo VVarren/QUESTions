@@ -8,23 +8,24 @@
 </script>
 
 <div class="cardContainer">
-	<button on:click={() => (clicked = !clicked)}>
-		<div class="cardTitle">{temp}</div>
+	<button on:click={() => (clicked = !clicked)} class="swapButton">
+		<div>{temp}</div>
 	</button>
 </div>
 
 <style>
 	.cardContainer {
-		background-color: red;
+		border-style: solid;
 		display: flex;
 		flex-direction: column;
-		width: 50%;
-		height: 100%;
+		width: 30%;
+		height: 30vh;
 		margin: 3%;
-	}
-	.cardTitle {
-		background-color: blue;
+		/* background-color: blue; */
 		justify-content: center;
 		text-align: center;
+	}
+	.swapButton {
+		border-style: none;
 	}
 </style>

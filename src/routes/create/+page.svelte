@@ -24,6 +24,9 @@
 </div>
 
 <style>
+	/*TODO ---
+		1. Need to make the css for the button
+	*/
 	.inputContainer {
 		border-style: solid;
 		border-radius: 20px;

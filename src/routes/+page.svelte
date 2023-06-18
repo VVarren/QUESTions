@@ -2,11 +2,14 @@
 	import Card from "./Card.svelte";
 	import welcome from "$lib/images/svelte-welcome.webp";
 	import welcome_fallback from "$lib/images/svelte-welcome.png";
+	/*
 	let cardArr = [
 		{
 			component: Card,
+			component: Card,
 		},
 	];
+*/
 </script>
 
 <svelte:head>
@@ -14,13 +17,13 @@
 </svelte:head>
 <h1>QUESTions</h1>
 <div class="cardList">
-	<!-- <Card/>
-		<Card/>
-		<Card/>
-		<Card/> -->
-	{#each cardArr as card}
+	<Card />
+	<Card />
+	<Card />
+	<Card />
+	<!-- {#each cardArr as card}
 		<svelte:component this={card.component} />
-	{/each}
+	{/each} -->
 </div>
 
 <style>
