@@ -20,7 +20,7 @@
 		class="backContentContainer"
 		placeholder="Enter the back content:"
 	/>
-	<button />
+	<button on:click={() => createCard()}> Create Card! </button>
 </div>
 
 <style>
