@@ -1,15 +1,11 @@
 <script lang="ts">
 	import Card from "./Card.svelte";
-	import welcome from "$lib/images/svelte-welcome.webp";
-	import welcome_fallback from "$lib/images/svelte-welcome.png";
-	/*
-	let cardArr = [
-		{
-			component: Card,
-			component: Card,
-		},
-	];
-*/
+	let title: string = "lol";
+	let backcontent: string = "sgsg";
+	let cardArr = [{ title: "f", backContent: "not f" }]; // somehow access data from card.svelte
+	let clicked: boolean = false;
+	let temp: string = title;
+	$: clicked ? (temp = backcontent) : (temp = title);
 </script>
 
 <svelte:head>
@@ -19,11 +15,13 @@
 <div class="cardList">
 	<Card />
 	<Card />
-	<Card />
-	<Card />
-	<!-- {#each cardArr as card}
-		<svelte:component this={card.component} />
-	{/each} -->
+	{#each cardArr as { title, backContent }}
+		<div class="cardContainer">
+			<button on:click={() => (clicked = !clicked)} class="swapButton">
+				<div>{temp}</div>
+			</button>
+		</div>
+	{/each}
 </div>
 
 <style>
@@ -37,5 +35,19 @@
 
 	h1 {
 		width: 100%;
+	}
+	.cardContainer {
+		border-style: solid;
+		display: flex;
+		flex-direction: column;
+		width: 30%;
+		height: 30vh;
+		margin: 3%;
+		/* background-color: blue; */
+		justify-content: center;
+		text-align: center;
+	}
+	.swapButton {
+		border-style: none;
 	}
 </style>

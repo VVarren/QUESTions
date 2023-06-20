@@ -3,6 +3,7 @@
 	let backContent: string = "";
 	function createCard() {
 		//somehow link the value to a new card
+
 		title = "";
 		backContent = "";
 	}
