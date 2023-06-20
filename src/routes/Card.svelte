@@ -1,4 +1,5 @@
 <script lang="ts">
+	//This is out of commision, I no longer need this file :)
 	let title: string = "Card Title";
 	let backcontent: string =
 		"Card Contents Card Contents Card Contents Card Contents11111";

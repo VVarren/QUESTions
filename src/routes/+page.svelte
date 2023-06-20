@@ -2,10 +2,14 @@
 	import Card from "./Card.svelte";
 	let title: string = "lol";
 	let backcontent: string = "sgsg";
-	let cardArr = [{ title: "f", backContent: "not f" }]; // somehow access data from card.svelte
+	let cardArr = [
+		{ title: "f", backContent: "not f", clicked: false },
+		{ title: "fh", backContent: "not fh", clicked: false },
+	]; // somehow access data from card.svelte
 	let clicked: boolean = false;
 	let temp: string = title;
 	$: clicked ? (temp = backcontent) : (temp = title);
+	console.log(cardArr);
 </script>
 
 <svelte:head>
@@ -13,8 +17,6 @@
 </svelte:head>
 <h1>QUESTions</h1>
 <div class="cardList">
-	<Card />
-	<Card />
 	{#each cardArr as { title, backContent }}
 		<div class="cardContainer">
 			<button on:click={() => (clicked = !clicked)} class="swapButton">
