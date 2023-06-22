@@ -6,10 +6,9 @@
 		{ title: "f", backContent: "not f", clicked: false },
 		{ title: "fh", backContent: "not fh", clicked: false },
 	]; // somehow access data from card.svelte
-	let clicked: boolean = false;
 	let temp: string = title;
-	$: clicked ? (temp = backcontent) : (temp = title);
-	console.log(cardArr);
+
+	//console.log(cardArr);
 </script>
 
 <svelte:head>
@@ -17,10 +16,13 @@
 </svelte:head>
 <h1>QUESTions</h1>
 <div class="cardList">
-	{#each cardArr as { title, backContent }}
+	{#each cardArr as card}
 		<div class="cardContainer">
-			<button on:click={() => (clicked = !clicked)} class="swapButton">
-				<div>{temp}</div>
+			<button
+				on:click={() => (card.clicked = !card.clicked)}
+				class="swapButton"
+			>
+				<div>{card.clicked ? card.backContent : card.title}</div>
 			</button>
 		</div>
 	{/each}
