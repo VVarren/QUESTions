@@ -6,6 +6,10 @@
 		{ title: "f", backContent: "not f", clicked: false },
 		{ title: "fh", backContent: "not fh", clicked: false },
 	]; // somehow access data from card.svelte
+	cardArr = [
+		...cardArr,
+		{ title: "this is not f", backContent: "100% not f", clicked: false },
+	];
 	let temp: string = title;
 
 	//console.log(cardArr);
