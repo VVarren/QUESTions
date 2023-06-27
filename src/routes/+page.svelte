@@ -1,7 +1,14 @@
 <script lang="ts">
 	import Card from "./Card.svelte";
+	import { cardInfo } from "../stores";
 	let title: string = "lol";
 	let backcontent: string = "sgsg";
+	let cardArr: any[] = [];
+
+	cardInfo.subscribe((value) => {
+		cardArr = value;
+	});
+	/*
 	let cardArr = [
 		{ title: "f", backContent: "not f", clicked: false },
 		{ title: "fh", backContent: "not fh", clicked: false },
@@ -9,7 +16,7 @@
 	cardArr = [
 		...cardArr,
 		{ title: "this is not f", backContent: "100% not f", clicked: false },
-	];
+	];*/
 	let temp: string = title;
 
 	//console.log(cardArr);

@@ -1,15 +1,26 @@
 <script lang="ts">
+	import { compute_slots } from "svelte/internal";
+	import { cardInfo } from "../../stores";
+	import Card from "../Card.svelte";
+
 	let title: string = "";
 	let backContent: string = "";
 	function createCard() {
 		//somehow link the value to a new card
-
+		cardInfo.update((cardInfo) => [
+			...cardInfo,
+			{ title: title, backContent: backContent, clicked: false },
+		]);
+		console.log(title);
+		console.log(backContent);
+		console.log(cardInfo);
 		title = "";
 		backContent = "";
 	}
 </script>
 
 <h1>Create A Card</h1>
+
 <div class="inputContainer">
 	<textarea
 		bind:value={title}
