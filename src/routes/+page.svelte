@@ -22,20 +22,23 @@
 	//console.log(cardArr);
 </script>
 
+<!-- the cardArr has an undef at index 0 -->
 <svelte:head>
 	<title>Quiz Stuff Main Page</title>
 </svelte:head>
 <h1>QUESTions</h1>
 <div class="cardList">
-	{#each cardArr as card}
-		<div class="cardContainer">
-			<button
-				on:click={() => (card.clicked = !card.clicked)}
-				class="swapButton"
-			>
-				<div>{card.clicked ? card.backContent : card.title}</div>
-			</button>
-		</div>
+	{#each cardArr as card, i}
+		{#if i > 1}
+			<div class="cardContainer">
+				<button
+					on:click={() => (card.clicked = !card.clicked)}
+					class="swapButton"
+				>
+					<div>{card.clicked ? card.backContent : card.title}</div>
+				</button>
+			</div>
+		{/if}
 	{/each}
 </div>
 
