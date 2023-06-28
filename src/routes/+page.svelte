@@ -8,18 +8,8 @@
 	cardInfo.subscribe((value) => {
 		cardArr = value;
 	});
-	/*
-	let cardArr = [
-		{ title: "f", backContent: "not f", clicked: false },
-		{ title: "fh", backContent: "not fh", clicked: false },
-	]; // somehow access data from card.svelte
-	cardArr = [
-		...cardArr,
-		{ title: "this is not f", backContent: "100% not f", clicked: false },
-	];*/
-	let temp: string = title;
 
-	//console.log(cardArr);
+	let temp: string = title;
 </script>
 
 <!-- the cardArr has an undef at index 0 -->
@@ -29,16 +19,16 @@
 <h1>QUESTions</h1>
 <div class="cardList">
 	{#each cardArr as card, i}
-		{#if i > 1}
-			<div class="cardContainer">
-				<button
-					on:click={() => (card.clicked = !card.clicked)}
-					class="swapButton"
-				>
-					<div>{card.clicked ? card.backContent : card.title}</div>
-				</button>
-			</div>
-		{/if}
+		<!-- {#if i > 1} -->
+		<div class="cardContainer">
+			<button
+				on:click={() => (card.clicked = !card.clicked)}
+				class="swapButton"
+			>
+				<div>{card.clicked ? card.backContent : card.title}</div>
+			</button>
+		</div>
+		<!-- {/if} -->
 	{/each}
 </div>
 

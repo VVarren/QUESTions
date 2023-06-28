@@ -1,7 +1,5 @@
 <script lang="ts">
-	import { compute_slots } from "svelte/internal";
 	import { cardInfo } from "../../stores";
-	import Card from "../Card.svelte";
 
 	let title: string = "";
 	let backContent: string = "";
