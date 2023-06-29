@@ -1,11 +1,15 @@
 <script lang="ts">
 	import { cardInfo } from "../stores";
+	function changeCardLayout() {}
 </script>
 
 <svelte:head>
 	<title>Quiz Stuff Main Page</title>
 </svelte:head>
-<h1>QUESTions</h1>
+<h1>
+	QUESTions
+	<button on:click={() => changeCardLayout()}>Change Card Layout</button>
+</h1>
 <div class="cardList">
 	{#each $cardInfo as card, i}
 		<div class="cardContainer">
@@ -19,6 +23,7 @@
 	{/each}
 </div>
 
+<!-- Need to correct the colors in the swapButton class -->
 <style>
 	.cardList {
 		display: flex;

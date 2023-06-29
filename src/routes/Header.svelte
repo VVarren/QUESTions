@@ -23,11 +23,11 @@
 				<a href="/create">Create</a>
 			</li>
 			<li
-				aria-current={$page.url.pathname.startsWith("/sverdle")
+				aria-current={$page.url.pathname.startsWith("/explore")
 					? "page"
 					: undefined}
 			>
-				<a href="/sverdle">Sverdle</a>
+				<a href="/explore">explore</a>
 			</li>
 		</ul>
 		<svg viewBox="0 0 2 3" aria-hidden="true">
