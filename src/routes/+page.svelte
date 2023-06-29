@@ -1,25 +1,13 @@
 <script lang="ts">
-	import Card from "./Card.svelte";
 	import { cardInfo } from "../stores";
-	let title: string = "lol";
-	let backcontent: string = "sgsg";
-	let cardArr: any[] = [];
-
-	cardInfo.subscribe((value) => {
-		cardArr = value;
-	});
-
-	let temp: string = title;
 </script>
 
-<!-- the cardArr has an undef at index 0 -->
 <svelte:head>
 	<title>Quiz Stuff Main Page</title>
 </svelte:head>
 <h1>QUESTions</h1>
 <div class="cardList">
-	{#each cardArr as card, i}
-		<!-- {#if i > 1} -->
+	{#each $cardInfo as card, i}
 		<div class="cardContainer">
 			<button
 				on:click={() => (card.clicked = !card.clicked)}
@@ -28,7 +16,6 @@
 				<div>{card.clicked ? card.backContent : card.title}</div>
 			</button>
 		</div>
-		<!-- {/if} -->
 	{/each}
 </div>
 

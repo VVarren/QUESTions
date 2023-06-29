@@ -4,7 +4,6 @@
 	let title: string = "";
 	let backContent: string = "";
 	function createCard() {
-		//somehow link the value to a new card
 		cardInfo.update((cardInfo) => [
 			...cardInfo,
 			{ title: title, backContent: backContent, clicked: false },
