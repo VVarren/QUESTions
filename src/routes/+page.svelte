@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { cardInfo } from "../stores";
+	// Need to do the chnangeCardLayout
 	function changeCardLayout() {}
 </script>
 

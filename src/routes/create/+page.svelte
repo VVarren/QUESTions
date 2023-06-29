@@ -3,16 +3,21 @@
 
 	let title: string = "";
 	let backContent: string = "";
+	let setName: string = "";
 	function createCard() {
 		cardInfo.update((cardInfo) => [
 			...cardInfo,
-			{ title: title, backContent: backContent, clicked: false },
+			{
+				title: title,
+				backContent: backContent,
+				clicked: false,
+				setName: setName,
+			},
 		]);
-		console.log(title);
-		console.log(backContent);
-		console.log(cardInfo);
+
 		title = "";
 		backContent = "";
+		setName = "";
 	}
 </script>
 
@@ -25,10 +30,16 @@
 		placeholder="Enter a title:"
 	/>
 	<textarea
+		bind:value={setName}
+		class="setNameContainer"
+		placeholder="Enter the set name:"
+	/>
+	<textarea
 		bind:value={backContent}
 		class="backContentContainer"
 		placeholder="Enter the back content:"
 	/>
+
 	<button on:click={() => createCard()}> Create Card! </button>
 </div>
 
@@ -52,6 +63,15 @@
 		border-radius: 20px;
 		border-width: 2px;
 		width: 50vh;
+		text-align: center;
+	}
+	.setNameContainer {
+		margin-top: 1.5%;
+		margin-bottom: 3%;
+		border-radius: 20px;
+		width: 50vh;
+
+		border-width: 2px;
 		text-align: center;
 	}
 	.backContentContainer {
