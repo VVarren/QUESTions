@@ -1,5 +1,7 @@
 <script lang="ts">
 	import { cardInfo } from "../stores";
+	import type { PageServerData } from "./$types";
+	export let data: PageServerData;
 	// Need to do the chnangeCardLayout
 	function changeCardLayout() {}
 </script>
@@ -12,6 +14,11 @@
 	<button on:click={() => changeCardLayout()}>Change Card Layout</button>
 </h1>
 <div class="cardList">
+	{#each data.packs as pack}
+		<div class="cardContainer">
+			{pack.name}
+		</div>
+	{/each}
 	{#each $cardInfo as card, i}
 		<div class="cardContainer">
 			<button
