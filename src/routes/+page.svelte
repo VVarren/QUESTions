@@ -16,17 +16,7 @@
 <div class="cardList">
 	{#each data.packs as pack}
 		<div class="cardContainer">
-			{pack.name}
-		</div>
-	{/each}
-	{#each $cardInfo as card, i}
-		<div class="cardContainer">
-			<button
-				on:click={() => (card.clicked = !card.clicked)}
-				class="swapButton"
-			>
-				<div>{card.clicked ? card.backContent : card.title}</div>
-			</button>
+			<a href="/packs/{pack.id}">{pack.name}</a>
 		</div>
 	{/each}
 </div>
@@ -40,10 +30,6 @@
 		justify-content: center;
 		align-items: center;
 	}
-
-	h1 {
-		width: 100%;
-	}
 	.cardContainer {
 		border-style: solid;
 		display: flex;
@@ -55,7 +41,7 @@
 		justify-content: center;
 		text-align: center;
 	}
-	.swapButton {
-		border-style: none;
+	h1 {
+		width: 100%;
 	}
 </style>
